@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import notes from './pronote.json';
+import notes from './notes.json';
 import subjects from './subjects.json';
 import {HttpClient} from '@angular/common/http';
 import {tap} from 'rxjs/operators';
@@ -20,12 +20,20 @@ export class AppComponent {
     this.subjects = subjects;
     this.notes = notes;
     this.subjectIds = this.subjects.map((aa) => aa.subject);
-    const url = 'https://raw.githubusercontent.com/StefQui/bulletin-app/master/src/app/pronote.json';
+    const urlNotes = 'https://raw.githubusercontent.com/StefQui/bulletin-app/master/src/app/notes.json?' + new Date().getTime();
+    const urlSubjects = 'https://raw.githubusercontent.com/StefQui/bulletin-app/master/src/app/subjects.json?' + new Date().getTime();
     this
       .http
-      .get<any>(`${url}`)
+      .get<any>(`${urlNotes}`)
       .pipe(
-//        tap((res) => this.pronote = res)
+        tap((res) => this.notes = res)
+      )
+      .subscribe();
+    this
+      .http
+      .get<any>(`${urlSubjects}`)
+      .pipe(
+        tap((res) => this.subjects = res)
       )
       .subscribe();
   }
