@@ -1,0 +1,32 @@
+[
+  {
+    "subject": "mat",
+    "subjectTitle": "Math",
+    "target": 12,
+    "actual": 11
+  },
+  {
+    "subject": "his",
+    "subjectTitle": "Histoire/géo",
+    "target": 13,
+    "actual": 9
+  },
+  {
+    "subject": "svt",
+    "subjectTitle": "SVT",
+    "target": 12,
+    "actual": 13
+  },
+  {
+    "subject": "phy",
+    "subjectTitle": "Physique",
+    "target": 12,
+    "actual": 13
+  },
+  {
+    "subject": "ang",
+    "subjectTitle": "Anglais",
+    "target": 12,
+    "actual": 13
+  }
+]

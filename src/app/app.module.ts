@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {environment} from '../environments/environment';
 import {APP_BASE_HREF} from '@angular/common';
 import { SubjectCardComponent } from './subject-card/subject-card.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SubjectCardComponent } from './subject-card/subject-card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: environment.baseHref }],
   bootstrap: [AppComponent]

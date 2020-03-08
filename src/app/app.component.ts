@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import data from './pronote.json';
+import notes from './pronote.json';
+import subjects from './subjects.json';
+import {HttpClient} from '@angular/common/http';
+import {tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +11,26 @@ import data from './pronote.json';
 })
 export class AppComponent {
   title = 'bulletin-app';
-  pronote = [];
+  subjects = [];
+  notes = [];
+  subjectIds: string[];
 
-  constructor() {
-    console.log(data);
-    this.pronote = data;
+  constructor(private http: HttpClient) {
+    console.log(subjects);
+    this.subjects = subjects;
+    this.notes = notes;
+    this.subjectIds = this.subjects.map((aa) => aa.subject);
+    const url = 'https://raw.githubusercontent.com/StefQui/bulletin-app/master/src/app/pronote.json';
+    this
+      .http
+      .get<any>(`${url}`)
+      .pipe(
+//        tap((res) => this.pronote = res)
+      )
+      .subscribe();
+  }
+
+  getNotes(subject: string) {
+    return this.notes.filter((s) => s.subject === subject);
   }
 }

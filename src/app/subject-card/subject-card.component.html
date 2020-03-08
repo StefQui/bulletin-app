@@ -4,6 +4,20 @@
     <p class="card-text">Objectif : 12/20</p>
     <p class="card-text">Moyenne actuelle : 11/20</p>
     <div class="text-info text-center mt-2"><h1>88%</h1></div>
+    <table class="table table-sm table-bordered">
+      <thead>
+      <tr>
+        <th>Note</th>
+        <th>Coeff</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+      <tr *ngFor="let note of notes">
+        <td>{{note.note}}</td>
+        <td>{{note.coefficient}}</td>
+        <td>{{note.date}}</td>
+      </tr>
+    </table>
   </div>
 </div>
 

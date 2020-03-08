@@ -1,27 +1,32 @@
 [
   {
-    "subjectTitle": "Math",
-    "target": 12,
-    "actual": 11
+    "subject": "mat",
+    "date": "2020-02-02",
+    "note": 11,
+    "coefficient": 2
   },
   {
-    "subjectTitle": "Histoire/géo",
-    "target": 13,
-    "actual": 9
+    "subject": "mat",
+    "date": "2020-03-01",
+    "note": 8,
+    "coefficient": 1
   },
   {
-    "subjectTitle": "SVT",
-    "target": 12,
-    "actual": 13
+    "subject": "svt",
+    "date": "2020-03-01",
+    "note": 10,
+    "coefficient": 1
   },
   {
-    "subjectTitle": "Physique",
-    "target": 12,
-    "actual": 13
+    "subject": "phy",
+    "date": "2020-03-01",
+    "note": 13,
+    "coefficient": 1
   },
   {
-    "subjectTitle": "Anglais",
-    "target": 12,
-    "actual": 13
+    "subject": "phy",
+    "date": "2020-03-01",
+    "note": 10,
+    "coefficient": 1
   }
 ]

@@ -6,8 +6,10 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./subject-card.component.scss']
 })
 export class SubjectCardComponent implements OnInit {
-@Input()
-public subjectTitle;
+  @Input()
+  public subjectTitle;
+  @Input()
+  public notes;
   constructor() { }
 
   ngOnInit() {

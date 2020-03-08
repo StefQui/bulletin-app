@@ -3,10 +3,12 @@
   <h1>Bulletin</h1>
 
   <div class="row">
-    <div class="col-sm-4" *ngFor="let subject of pronote">
-      <app-subject-card [subjectTitle]="subject.subjectTitle"></app-subject-card>
+    <div class="col-sm-4" *ngFor="let subject of subjects">
+      <app-subject-card [subjectTitle]="subject.subjectTitle" [notes]="getNotes(subject.subject)"></app-subject-card>
     </div>
   </div>
-<pre>{{pronote | json}}</pre>
+  <pre>{{subjects | json}}</pre>
+  <pre>{{notes | json}}</pre>
+  <pre>{{subjectIds | json}}</pre>
   <router-outlet></router-outlet>
 </div>
