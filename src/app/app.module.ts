@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {environment} from '../environments/environment';
 import {APP_BASE_HREF} from '@angular/common';
+import { SubjectCardComponent } from './subject-card/subject-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SubjectCardComponent
   ],
   imports: [
     BrowserModule,

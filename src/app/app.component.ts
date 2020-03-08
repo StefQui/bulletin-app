@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import data from './pronote.json';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bulletin-app';
+  pronote = [];
+
+  constructor() {
+    console.log(data);
+    this.pronote = data;
+  }
 }
