@@ -1,0 +1,78 @@
+<p>stat works!</p>
+
+<form>
+  <div class="multi-select">
+    <angular2-multiselect [data]="dropdownList"
+                          [(ngModel)]="selectedItems"
+                          name="countrys"
+                          [settings]="dropdownSettings"
+                          (onSelect)="onItemSelect($event)"
+                          (onDeSelect)="OnItemDeSelect($event)"
+                          (onSelectAll)="onSelectAll($event)"
+                          (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>
+  </div>
+</form>
+<!--<pre>-->
+<!--  selectedItems:{{selectedItems | json}}-->
+<!--</pre>-->
+<!--<pre>-->
+<!--  selectedCountrys:-->
+<!--</pre>-->
+<div *ngIf="selectedItems.length > 0">
+  <h4>Deaths</h4>
+  <div class="chart-wrapper">
+    <canvas baseChart
+            class="the-chart"
+            [datasets]="lineChartDeaths"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+  <h4>Confirmed</h4>
+  <div class="chart-wrapper">
+    <canvas baseChart
+            class="the-chart"
+            [datasets]="lineChartConfirmed"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+  <h4>Recovered</h4>
+  <div class="chart-wrapper">
+    <canvas baseChart
+            class="the-chart"
+            [datasets]="lineChartRecovered"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+</div>
+<!--
+<div>{{lineChartLabels | json}}</div>
+<div *ngFor="let country of selectedCountrys">
+  <p>{{country.country}}</p>
+  <table class="table table-bordered table-sm">
+    <tr *ngFor="let stat of country.stats">
+      <td>{{stat.date}}</td>
+      <td>{{stat.confirmed}}</td>
+      <td>{{stat.deaths}}</td>
+      <td>{{stat.recovered}}</td>
+    </tr>
+  </table>
+</div>
+<pre>
+  {{selectedCountrys | json}}
+</pre>
+-->

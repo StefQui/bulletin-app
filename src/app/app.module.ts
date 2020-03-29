@@ -7,14 +7,26 @@ import {environment} from '../environments/environment';
 import {APP_BASE_HREF} from '@angular/common';
 import { SubjectCardComponent } from './subject-card/subject-card.component';
 import {HttpClientModule} from '@angular/common/http';
+import { AboutComponent } from './modules/general/about/about.component';
+import { BulletinComponent } from './modules/general/bulletin/bulletin.component';
+import { StatComponent } from './modules/general/stat/stat.component';
+import {AngularMultiSelectModule} from 'angular2-multiselect-dropdown';
+import {FormsModule} from '@angular/forms';
+import {ChartsModule} from 'ng2-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubjectCardComponent
+    SubjectCardComponent,
+    AboutComponent,
+    BulletinComponent,
+    StatComponent
   ],
   imports: [
+    AngularMultiSelectModule,
     BrowserModule,
+    FormsModule,
+    ChartsModule,
     AppRoutingModule,
     HttpClientModule
   ],

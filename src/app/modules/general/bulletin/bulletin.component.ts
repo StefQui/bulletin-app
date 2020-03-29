@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import notes from './modules/general/bulletin/notes.json';
-import subjects from './modules/general/bulletin/subjects.json';
+import notes from './notes.json';
+import subjects from './subjects.json';
 import {HttpClient} from '@angular/common/http';
 import {tap} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-bulletin',
+  templateUrl: './bulletin.component.html',
+  styleUrls: ['./bulletin.component.scss']
 })
-export class AppComponent {
+export class BulletinComponent {
   title = 'bulletin-app';
   subjects = [];
   notes = [];

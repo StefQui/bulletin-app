@@ -1,14 +1,13 @@
-<div class="container-fluid">
-
-  <h1>Bulletin</h1>
-
-  <div class="row">
-    <div class="col-sm-4" *ngFor="let subject of subjects">
-      <app-subject-card [subjectTitle]="subject.subjectTitle" [notes]="getNotes(subject.subject)"></app-subject-card>
-    </div>
-  </div>
-  <pre>{{subjects | json}}</pre>
-  <pre>{{notes | json}}</pre>
-  <pre>{{subjectIds | json}}</pre>
-  <router-outlet></router-outlet>
-</div>
+<header>
+  <ul>
+<!--    <li><a routerLink="/bulletin">Bulletin</a></li>-->
+    <li><a routerLink="/stat">Stats</a></li>
+    <li><a routerLink="/about">About</a></li>
+  </ul>
+</header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+<footer>
+  <p>&copy;Stef</p>
+</footer>
