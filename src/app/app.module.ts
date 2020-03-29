@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {environment} from '../environments/environment';
-import {APP_BASE_HREF} from '@angular/common';
+import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { SubjectCardComponent } from './subject-card/subject-card.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AboutComponent } from './modules/general/about/about.component';
@@ -30,7 +30,16 @@ import {ChartsModule} from 'ng2-charts';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: environment.baseHref }],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useValue: environment.baseHref
+    },
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
