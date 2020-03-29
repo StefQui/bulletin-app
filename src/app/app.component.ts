@@ -3,6 +3,8 @@ import notes from './notes.json';
 import subjects from './subjects.json';
 import {HttpClient} from '@angular/common/http';
 import {tap} from 'rxjs/operators';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFireDatabase} from '@angular/fire/database';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,15 @@ export class AppComponent {
   notes = [];
   subjectIds: string[];
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private db: AngularFirestore
+  ) {
+    db.collection('notes').valueChanges().pipe(
+      tap(a => console.log('db', a)
+  )
+    ).subscribe();
+    console.log('db', );
     console.log(subjects);
     this.subjects = subjects;
     this.notes = notes;
